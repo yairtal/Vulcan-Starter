@@ -8,3 +8,4 @@ export * from './posts/index.js';
 export * from './categories/index.js';
 export * from './comments/index.js';
 export * from './users/index.js';
+export * from './pics/index.js';

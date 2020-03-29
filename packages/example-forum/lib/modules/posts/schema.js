@@ -269,6 +269,19 @@ const schema = {
       relation: 'hasOne',
     },
   },
+  picId: {
+    type: String,
+    optional: true,
+    input: 'select',
+    canRead: ['guests'],
+    canCreate: ['members'],
+    hidden: true,
+    resolveAs: {
+      fieldName: 'pic',
+      type: 'Pic',
+      relation: 'hasOne',
+    },
+  },
   categoriesIds: {
     type: Array,
     input: 'checkboxgroup',
