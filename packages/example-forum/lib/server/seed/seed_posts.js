@@ -78,29 +78,29 @@ if (getSetting('forum.seedOnStart')) {
     });
   };
 
-  const createComment = async (slug, username, body, parentBody) => {
-    const user = await Users.rawCollection().findOne({username: username});
-    const post = await Posts.rawCollection().findOne({dummySlug: slug});
-    const comment = {
-      postId: post._id,
-      userId: user._id,
-      body: body,
-      isDummy: true,
-      disableNotifications: true,
-    };
-    const parentComment = await Comments.rawCollection().findOne({body: parentBody});
-
-    if (parentComment) {
-      comment.parentCommentId = parentComment._id;
-    }
-
-    return newMutation({
-      collection: Comments,
-      document: comment,
-      currentUser: user,
-      validate: false,
-    });
-  };
+  // const createComment = async (slug, username, body, parentBody) => {
+  //   const user = await Users.rawCollection().findOne({username: username});
+  //   const post = await Posts.rawCollection().findOne({dummySlug: slug});
+  //   const comment = {
+  //     postId: post._id,
+  //     userId: user._id,
+  //     body: body,
+  //     isDummy: true,
+  //     disableNotifications: true,
+  //   };
+  //   const parentComment = await Comments.rawCollection().findOne({body: parentBody});
+  //
+  //   if (parentComment) {
+  //     comment.parentCommentId = parentComment._id;
+  //   }
+  //
+  //   return newMutation({
+  //     collection: Comments,
+  //     document: comment,
+  //     currentUser: user,
+  //     validate: false,
+  //   });
+  // };
 
   const createUser = async (username, email) => {
     const document = {
@@ -193,8 +193,8 @@ if (getSetting('forum.seedOnStart')) {
     if (!Posts.find().count()) {
       Promise.await(createDummyPosts());
     }
-    if (!Comments.find().count()) {
-      Promise.await(createDummyComments());
-    }
+    // if (!Comments.find().count()) {
+    //   Promise.await(createDummyComments());
+    // }
   });
 }
