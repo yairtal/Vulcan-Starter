@@ -16,7 +16,7 @@ accounts-password@1.5.1
 
 # example-simple
 # example-forms
-# example-forum
+example-forum
 
 # Uncomment to generate an admin area on /backoffice available to users of role "admin"
 # vulcan:backoffice
@@ -31,4 +31,4 @@ accounts-password@1.5.1
 # example-interfaces
 # example-reactions
 
-getting-started
+# getting-started
