@@ -1,6 +1,6 @@
 /* global Vulcan */
 import moment from 'moment';
-import { createMutator, getSetting } from 'meteor/vulcan:core';
+import { createMutator, newMutation, getSetting } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
 import { Promise } from 'meteor/promise';
 import { Posts } from '../../modules/posts/index.js';
